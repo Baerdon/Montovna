@@ -10,15 +10,22 @@
 using namespace std;
 
 class Uzel {
-private:
-    int cas_vyroby = 0;
-    Uzel *sousede = nullptr;
 public:
+    int cas_vyroby = 0; //čas výroby součástky
+    int oznacen = 0; //navštíven = 1, uzavřen = 2
+    Uzel *sousede = nullptr; //pole pro hrany
+    
     Uzel(){
     }
     
     Uzel(int cas){
         cas_vyroby = cas;
+    }
+    
+    ~Uzel(){
+        if (sousede != nullptr) {
+            delete[] sousede;
+        }
     }
     
     void Pridej_sousedy(int pocet){
@@ -27,11 +34,10 @@ public:
 };
 
 class Zasobnik {
-private:
+public:
     int vrchol;
     int velikost;
     Uzel *hodnoty;
-public:
     Zasobnik (int vel){
         velikost = vel;
         hodnoty = new Uzel[velikost];
@@ -47,23 +53,33 @@ public:
         hodnoty[vrchol] = u;
     }
     
-    Uzel pop(){
+    Uzel Pop(){
         Uzel u = hodnoty[vrchol];
         vrchol--;
         return u;
     }
     
-    bool isEmpty(){
+    bool IsEmpty(){
         return vrchol == -1;
     }
 };
 
-void NactiVstup(){
+void NactiCasyVyroby(Zasobnik z){
+    for (int i = 0; i < z.velikost; i++) {
+        int cas;
+        cin >> cas;
+        Uzel u = Uzel(cas);
+        z.hodnoty[i] = u;
+    }
     //metoda pro náčet grafu
 }
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    int pocet_soucastek;
+    cin >> pocet_soucastek;
+    int casySoucastek[pocet_soucastek];
+    Zasobnik z(pocet_soucastek);
+    NactiCasyVyroby(z);
+    cout << "hotovo";
     return 0;
 }
