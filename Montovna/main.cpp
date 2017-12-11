@@ -9,6 +9,12 @@
 #include <iostream>
 using namespace std;
 
+class Graf{
+private:
+    //unsigned pocet_vrcholu;
+    //List *sousede;
+};
+
 class Uzel {
 public:
     int cas_vyroby = 0; //čas výroby součástky
@@ -64,12 +70,13 @@ public:
     }
 };
 
-void NactiCasyVyroby(Zasobnik z){
-    for (int i = 0; i < z.velikost; i++) {
+void NactiCasyVyroby(Zasobnik *z, int pole[]){
+    for (int i = 0; i < z->velikost; i++) {
         int cas;
         cin >> cas;
         Uzel u = Uzel(cas);
-        z.hodnoty[i] = u;
+        z->hodnoty[i] = u;
+        pole[i] = cas;
     }
     //metoda pro náčet grafu
 }
@@ -79,7 +86,8 @@ int main(int argc, const char * argv[]) {
     cin >> pocet_soucastek;
     int casySoucastek[pocet_soucastek];
     Zasobnik z(pocet_soucastek);
-    NactiCasyVyroby(z);
+    NactiCasyVyroby(&z, casySoucastek);
     cout << "hotovo";
     return 0;
 }
+

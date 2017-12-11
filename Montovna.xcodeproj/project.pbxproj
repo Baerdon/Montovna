@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46A38F7B1FDEBCA800CC5849 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46A38F7A1FDEBCA800CC5849 /* main.cpp */; };
+		46A38F821FDF225100CC5849 /* graf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46A38F811FDF225100CC5849 /* graf.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		46A38F771FDEBCA800CC5849 /* Montovna */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Montovna; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A38F7A1FDEBCA800CC5849 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		46A38F811FDF225100CC5849 /* graf.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = graf.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				46A38F7A1FDEBCA800CC5849 /* main.cpp */,
+				46A38F811FDF225100CC5849 /* graf.cpp */,
 			);
 			path = Montovna;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46A38F7B1FDEBCA800CC5849 /* main.cpp in Sources */,
+				46A38F821FDF225100CC5849 /* graf.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
